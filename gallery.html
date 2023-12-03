@@ -190,12 +190,6 @@
 						<p>
 							<small class="block">&copy; 2023 Dam Hai Hiep</small>
 						</p>
-						<p>
-						<ul class="fh5co-social-icons">
-							<li><a target="_blank" href="https://www.facebook.com/damhaihiep1996"><i
-										class="icon-facebook"></i></a></li>
-						</ul>
-						</p>
 					</div>
 				</div>
 
@@ -219,6 +213,12 @@
 		class="bi bi-play-circle-fill btn-play" viewBox="0 0 16 16">
 		<path
 			d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
+	</svg>
+
+	<svg id="btnScroll" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+		class="bi bi-arrow-up-square-fill btn-scroll" viewBox="0 0 16 16">
+		<path
+			d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0" />
 	</svg>
 
 	<style>
@@ -246,6 +246,18 @@
 			cursor: pointer;
 			-webkit-animation: pulse 1s ease infinite;
 			animation: pulse 1s ease infinite;
+		}
+
+		.btn-scroll {
+			display: none;
+			position: fixed;
+			right: 40px;
+			bottom: 40px;
+			z-index: 100;
+			fill: #F14E95;
+			height: 60px;
+			width: 60px;
+			cursor: pointer;
 		}
 
 		.btn-play {
@@ -389,6 +401,15 @@
 				width: 60px;
 			}
 
+			.btn-scroll {
+				padding: 4px 8px;
+				font-size: 12px;
+				right: 20px;
+				bottom: 20px;
+				height: 60px;
+				width: 60px;
+			}
+
 			.btn-play {
 				padding: 4px 8px;
 				font-size: 12px;
@@ -403,6 +424,7 @@
 	<script>
 		var btnMusic = document.getElementById("btnMusic");
 		var btnPlay = document.getElementById("btnPlay");
+		var height = window.innerHeight;
 
 		btnMusic.onclick = function () {
 			document.getElementById("audioplayer").pause();
@@ -414,6 +436,21 @@
 			document.getElementById("audioplayer").play();
 			btnMusic.style.display = "block";
 			btnPlay.style.display = "none";
+		}
+
+		btnScroll.onclick = function () {
+			window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+		}
+
+		window.onscroll = function () { myFunction() };
+
+
+		function myFunction() {
+			if (document.body.scrollTop > height || document.documentElement.scrollTop > height) {
+				document.getElementById("btnScroll").style.display = "block";
+			} else {
+				document.getElementById("btnScroll").style.display = "none";
+			}
 		}
 
 		window.onload = function () {
