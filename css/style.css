@@ -511,8 +511,8 @@ figure {
   right: -15px;
   display: inline-block;
   border-top: 15px solid transparent;
-  border-left: 15px solid #ccc;
-  border-right: 0 solid #ccc;
+  border-left: 15px solid #fff;
+  border-right: 0 solid #fff;
   border-bottom: 15px solid transparent;
   content: " ";
 }
