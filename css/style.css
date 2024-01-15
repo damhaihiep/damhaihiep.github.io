@@ -530,7 +530,7 @@ figure {
 }
 .timeline > li > .timeline-badge {
   background-size: cover;
-  background-position: top center;
+  background-position: center;
   background-repeat: no-repeat;
   position: relative;
   color: #fff;
