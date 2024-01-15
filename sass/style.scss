@@ -985,6 +985,12 @@ figure {
         }
       }
 
+      &.icon-facebook {
+        &:before {
+          font-size: 23px;
+        }
+      }
+
       &.url {
         &:before {
           font-size: 23px;
